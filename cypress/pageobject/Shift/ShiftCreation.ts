@@ -11,6 +11,22 @@ export class ShiftCreation {
     cy.get("#reason").click().type(reason);
   }
 
+  typeAmbulanceDriverName(name: string) {
+    cy.get("#ambulance_driver_name").click().type(name);
+  }
+
+  typeAmbulancePhone(number: string) {
+    cy.get("#ambulance_phone_number").click().type(number);
+  }
+
+  typeAmbulanceNumber(number: string) {
+    cy.get("#ambulance_number").click().type(number);
+  }
+  
+  typeComment(comment:string) {
+    cy.get('#comments').click().type(comment)
+  }
+
   submitShiftForm() {
     cy.get("#submit").contains("Submit").click();
   }

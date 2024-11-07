@@ -138,5 +138,14 @@ export class PatientConsultationPage {
     cy.intercept(/\/api\/hcx\/policy\/\?.*/).as("policyStatus");
     cy.get("#consultation-buttons").contains("Claims").click();
     cy.wait("@policyStatus").its("response.statusCode").should("eq", 200);
+
+  clickShiftPatientButton() {
+    cy.get("#consultation-buttons").scrollIntoView();
+    cy.get("button").contains("Manage Patient").click();
+    cy.verifyAndClickElement(
+      "#consultation-buttons",
+      "Shift Patient",
+    );
+    cy.wait(3000);
   }
 }
