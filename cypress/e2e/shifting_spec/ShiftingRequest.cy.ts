@@ -16,7 +16,7 @@ describe("New shifting request",() =>{
   const patientConsultationPage = new PatientConsultationPage() 
 
   before(() => { 
-    loginPage.loginAsDisctrictAdmin(); 
+    loginPage.loginAsDistrictAdmin(); 
     cy.saveLocalStorage(); 
   });
 
