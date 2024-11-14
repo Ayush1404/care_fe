@@ -24,11 +24,15 @@ export class ShiftCreation {
   }
   
   typeComment(comment:string) {
-    cy.get('#comments').click().type(comment)
+    cy.get("#comments").click().type(comment)
   }
 
   submitShiftForm() {
-    cy.get("#submit").contains("Submit").click();
+    cy.submitButton("Submit");
+  }
+
+  interceptShiftCreationRequest(){
+    cy.intercept("POST", "api/v1/shift").as("shiftRequest");
   }
 }
 export default ShiftCreation;

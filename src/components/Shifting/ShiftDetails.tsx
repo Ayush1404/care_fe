@@ -629,13 +629,13 @@ export default function ShiftDetails(props: { id: string }) {
                 <span className="font-semibold leading-relaxed">
                   {t("reason")}:{" "}
                 </span>
-                <span className="ml-2">{data?.reason || "--"}</span>
+                <span id="shift_details_reason" className="ml-2">{data?.reason || "--"}</span>
               </div>
               <div className="md:col-span-2 md:row-span-2">
                 <span className="font-semibold leading-relaxed">
                   {t("ambulance_driver_name")}:{" "}
                 </span>
-                <span className="ml-2">
+                <span id="shift_details_ambulance_driver_name" className="ml-2">
                   {data?.ambulance_driver_name || "--"}
                 </span>
               </div>
@@ -643,7 +643,7 @@ export default function ShiftDetails(props: { id: string }) {
                 <span className="font-semibold leading-relaxed">
                   {t("ambulance_phone_number")}:{" "}
                 </span>
-                <span className="ml-2">
+                <span id="shift_details_ambulance_phone_number" className="ml-2">
                   {data?.ambulance_phone_number ? (
                     <a href={`tel:${data?.ambulance_phone_number}`}>
                       {data?.ambulance_phone_number}
@@ -657,10 +657,10 @@ export default function ShiftDetails(props: { id: string }) {
                 <span className="font-semibold leading-relaxed">
                   {t("ambulance_number")}:{" "}
                 </span>
-                <span className="ml-2">{data?.ambulance_number || "--"}</span>
+                <span id="shift_details_ambulance_number" className="ml-2">{data?.ambulance_number || "--"}</span>
               </div>
               <div className="md:col-span-2 md:row-span-2">
-                <span className="font-semibold leading-relaxed">
+                <span id="shift_details_comments" className="font-semibold leading-relaxed">
                   {t("comments")}:{" "}
                 </span>
                 <span className="ml-2">{data?.comments || "--"}</span>

@@ -16,11 +16,15 @@ export class ShiftUpdate {
   }
   
   typeComment(comment: string) {
-    cy.get('#comments').click().clear().type(comment);
+    cy.get("#comments").click().clear().type(comment);
   }
   
   submitShiftForm() {
-    cy.get("#submit").contains("Submit").click();
+    cy.submitButton("Submit");
+  }
+
+  interceptShiftUpdateRequest(){
+    cy.intercept("PUT", "**/api/v1/shift/**").as("shiftUpdateRequest");
   }
 }
 export default ShiftUpdate;
